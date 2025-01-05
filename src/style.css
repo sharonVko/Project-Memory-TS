@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "Soft Marshmallow";
+  src: url("./fonts/SoftMarshmallow.otf");
+};
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; 
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(45deg, crimson, crimson 20px, lightyellow 20px, lightyellow 40px);
+  opacity: 0.3; 
+  z-index: -1; /* Legt den Hintergrund hinter den Hauptinhalt */
+}
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  margin:  6% ;  
+  padding: 20px;
+  position: relative; 
+  z-index: 1; /* Legt den Hauptinhalt vor den Hintergrund */
+  background-color: lightgoldenrodyellow;
+  border: 20px solid rgb(11, 172, 172);
+  border-radius: 6px;
+  
+}
+
+h1 {
+  /* font-size: 2.8rem; */
+  font-size: 4.4rem;
+  margin-bottom: 10px;
+  color: crimson;
+  font-weight: 900;
+  font-family: Chalkboard;
+ /*  font-family: "Soft Marshmallow"; */
+  text-shadow: 1px 3px 2px rgb(11, 172, 172);
+}
+
+.pair-count-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20%;
+}
+
+p{
+  color: rgb(11, 172, 172);
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px crimson;
+  font-family: Comic Sans MS;
+}
+span{
+  color: crimson;
+}
+.pairsGuessed{
+  color: rgb(11, 172, 172); /* change when bigger than 0? */
+  font-weight: 600;
+}
+section {
+  margin-bottom: 20px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  grid-template-rows: repeat(4, 1fr); 
+  gap: 20px;
+  justify-content: center;
+  /* max-width: 600px;  */
+  max-width: 900px; 
+  margin: 4% auto; 
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(217, 77, 105);
+  color: white;
+  border: 2px solid  rgb(11, 172, 172);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 3% 0 6% 0;
+  /* box-shadow: 6px 6px 10px rgba(0, 128, 128, 0.5); */
+  box-shadow: 6px 6px 10px rgba(0, 128, 128, 1.2);
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.game-card {
+  position: relative;
+  width: 100%;
+  height: 140px; 
+  cursor: pointer;
+  transform-style: preserve-3d; /* Ermöglicht 3D-Drehung für Karten */
+  transition: transform 0.6s; /* Weiche Übergänge bei Animationen */
+  transform: rotateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 255, 0.4); 
+  border-radius: 10px;
+}
+
+.game-card.visible {
+  transform: rotateY(180deg); /* Dreht die Karte, um die Rückseite zu zeigen */
+}
+
+.game-card.matched {
+  pointer-events: none;
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 140px; 
+  font-size: 6rem;
+  text-align: center;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card__face--front {
+  background-color: rgba(220, 20, 60, 0.88);
+  /* just checking */
+  border: 2px solid  rgb(11, 172, 172);
+  box-shadow: 0 4px 6px rgba(0, 0, 255, 0.4); /* shadow color of card back color*/
+}
+
+.card__face--back {
+  background-color: rgba(105, 90, 205, 0.932);
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 6px crimson;/* shadow color of card front color*/
+}
+
+/* winner pop up */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.75); */
+  background-color: rgb(11, 172, 172, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background-color: lightgoldenrodyellow;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 3px solid rgb(217,77,105);
+}
+
+.overlay-content h2 {
+  /* font-size: 2rem;
+  margin-bottom: 10px; */
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: crimson;
+  font-weight: 900;
+  font-family: Chalkboard;
+ /*  font-family: "Soft Marshmallow"; */
+  text-shadow: 1px 1px 2px rgb(11, 172, 172);
+}
+
+.overlay-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#play-again-btn {
+  padding: 10px 20px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#play-again-btn:hover {
+  background-color: darkred;
+}

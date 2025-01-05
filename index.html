@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1>Munchies Memory</h1>
+      <div class="pair-count-wrapper">
+        <p>Pairs clicked: <span id="pairsClicked">0</span></p>
+        <p>Pairs guessed: <span id="pairsGuessed">0</span></p>
+      </div>
+    </section>
+    <section id="game-board"></section>
+    <button id="new-game-btn">
+      <a href="./index.html">New Game</a></button>
+      <!-- winner pop up -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-content">
+          <h2>Congratulations! 🎈</h2>
+          <p>You found all the good snacks!</p>
+          <button id="play-again-btn">Play again</button>
+        </div>
+      </div>
+      
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
