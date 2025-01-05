@@ -16,6 +16,8 @@ Welcome to **Munchies Memory**, a delightful twist on the classic memory game! T
 4. Use the reset button to restart the game at any point.
 5. Once all pairs are found, you'll see a special message congratulating you!
 
+### Try it here : [The Munchies memory](https://the-munchies-memory-game.netlify.app/)
+
 ## Technologies Used
 
 - **HTML:** Structure and content of the game.
