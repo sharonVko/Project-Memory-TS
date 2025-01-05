@@ -26,13 +26,12 @@ Welcome to **Munchies Memory**, a delightful twist on the classic memory game! T
 
 This project was lovingly crafted by:
 
-- **[https://github.com/TinaBK24]**
-- **[https://github.com/sharonVko]**
+- **[TinaBK24](https://github.com/TinaBK24)**
+- **[sharonVko](https://github.com/sharonVko)**
 
 We had a blast creating this game and hope you enjoy playing it as much as we did programming it!
 Happy matching! 🎉
 
-# _and a little preview ..._
+## _and a little preview ..._
 
-![screenshot]()
 ![screenshot](./src/readMeImgs/screenPreviewWinner.png)
